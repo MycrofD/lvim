@@ -115,12 +115,6 @@ lvim.plugins = {
     "Acksld/swenv.nvim",      -- actual env switcher
     "stevearc/dressing.nvim", -- will make the UI look nicer
   },
-  -- debugging
-  {
-    "mfussenegger/nvim-dap-python",
-    "nvim-neotest/neotest",
-    "nvim-neotest/neotest-python",
-  },
   -- linting
   {
     "mfussenegger/nvim-lint",
