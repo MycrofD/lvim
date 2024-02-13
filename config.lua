@@ -12,7 +12,7 @@ vim.opt.relativenumber = true
 lvim.log.level = "info"
 lvim.format_on_save = {
   enabled = true,
-  pattern = { "*.lua", "*.py", "*.json" },
+  pattern = { "*.lua", "*.py", "*.json", "*.md" },
   timeout = 1000,
 }
 -- to disable icons and use a minimalist setup, uncomment the following
@@ -95,6 +95,21 @@ formatters.setup {
 
 -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
+  -- headlines.nvim for markdown
+  {
+    'lukas-reineke/headlines.nvim',
+    dependencies = { 'nvim-treesitter' },
+    config = true, -- or `opts = { }`
+  },
+  -- install without yarn or npm
+  {
+    "iamcco/markdown-preview.nvim",
+    autocmd = { "MarkdownPreview" },
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
+  },
+
   -- switch env
   {
     "Acksld/swenv.nvim",      -- actual env switcher
