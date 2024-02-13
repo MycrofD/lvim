@@ -175,6 +175,12 @@ lvim.plugins = {
     "neoclide/coc.nvim",
     branch = "release",
   },
+  -- MUST HAVES
+  { "psf/black" },         -- black formatter for python
+  { "microsoft/pyright" }, -- python language server
+  { "LuaLS/lua-language-server" },
+  { "astral-sh/ruff" },
+  { "astral-sh/ruff-lsp" }, -- should gradually replace others like black
 }
 
 require('swenv').setup({
