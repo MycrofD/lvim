@@ -95,6 +95,9 @@ formatters.setup {
 
 -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
+  -- split and resize windows better
+  { "beauwilliams/focus.nvim" },
+  { "mrjones2014/smart-splits.nvim" },
   -- headlines.nvim for markdown
   {
     'lukas-reineke/headlines.nvim',
