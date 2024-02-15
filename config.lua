@@ -115,8 +115,12 @@ lvim.plugins = {
 
   -- switch env
   {
-    "Acksld/swenv.nvim",      -- actual env switcher
+    "Acksld/swenv.nvim", -- actual env switcher
+  },
+  -- improve the default vim.ui interfaces
+  {
     "stevearc/dressing.nvim", -- will make the UI look nicer
+    opts = {},
   },
   -- linting
   {
