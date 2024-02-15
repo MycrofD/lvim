@@ -95,6 +95,17 @@ formatters.setup {
 
 -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
+  -- define your keymaps, commands, and autocommands as simple as Lua tables,
+  -- building a legend at the same time
+  {
+    'mrjones2014/legendary.nvim',
+    -- since legendary.nvim handles all your keymaps/commands,
+    -- its recommended to load legendary.nvim before other plugins
+    priority = 10000,
+    lazy = false,
+    -- sqlite is only needed if you want to use frecency sorting
+    -- dependencies = { 'kkharji/sqlite.lua' }
+  },
   -- split and resize windows better
   { "beauwilliams/focus.nvim" },
   { "mrjones2014/smart-splits.nvim" },
