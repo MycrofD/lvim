@@ -95,6 +95,16 @@ lvim.builtin.treesitter.auto_install = true
 
 -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
+  -- debugging
+  {
+    "mfussenegger/nvim-dap-python",
+    "nvim-neotest/neotest",
+    "nvim-neotest/neotest-python",
+  },
+  -- linting
+  {
+    "mfussenegger/nvim-lint",
+  },
   -- vim-fugitive
   {
     "tpope/vim-fugitive",
