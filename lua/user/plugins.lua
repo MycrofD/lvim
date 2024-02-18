@@ -87,6 +87,8 @@ lvim.plugins = {
     },
   },
   -- github copilot
+  -- TODO: Refer official sources (https://github.com/zbirenbaum/copilot-cmp) for udpating the config
+  -- TODO: Compare with https://youtu.be/Qf9gfx7gWEY?si=t40hoZSoQyNiOrSn&t=283
   {
     "zbirenbaum/copilot-cmp",
     event = "InsertEnter",
