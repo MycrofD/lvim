@@ -80,11 +80,13 @@ lvim.plugins = {
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {
-      -- your configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-    },
+    opts = {},
+  },
+  -- https://github.com/folke/todo-comments.nvim
+  {
+    "folke/todo-comments.nvim",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {}
   },
   -- github copilot
   -- TODO: Refer official sources (https://github.com/zbirenbaum/copilot-cmp) for udpating the config
