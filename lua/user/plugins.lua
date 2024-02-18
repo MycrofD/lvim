@@ -2,7 +2,7 @@ lvim.plugins = {
   -- define your keymaps, commands, and autocommands as simple as Lua tables,
   -- building a legend at the same time
   {
-    'mrjones2014/legendary.nvim',
+    "mrjones2014/legendary.nvim",
     -- since legendary.nvim handles all your keymaps/commands,
     -- its recommended to load legendary.nvim before other plugins
     priority = 10000,
@@ -15,8 +15,8 @@ lvim.plugins = {
   { "mrjones2014/smart-splits.nvim" },
   -- headlines.nvim for markdown
   {
-    'lukas-reineke/headlines.nvim',
-    dependencies = { 'nvim-treesitter' },
+    "lukas-reineke/headlines.nvim",
+    dependencies = { "nvim-treesitter" },
     config = true, -- or `opts = { }`
   },
   -- install without yarn or npm
