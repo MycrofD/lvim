@@ -75,10 +75,16 @@ lvim.plugins = {
     "sindrets/diffview.nvim",
     event = "BufRead",
   },
-  -- sample from this example file
+  -- https://github.com/folke/trouble.nvim
+  -- A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
   {
     "folke/trouble.nvim",
-    cmd = "TroubleToggle",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {
+      -- your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    },
   },
   -- github copilot
   {
