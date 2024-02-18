@@ -141,10 +141,20 @@ lvim.plugins = {
     "neoclide/coc.nvim",
     branch = "release",
   },
-  -- MUST HAVES
-  { "psf/black" },         -- black formatter for python
-  { "microsoft/pyright" }, -- python language server
-  { "LuaLS/lua-language-server" },
-  { "astral-sh/ruff" },
-  { "astral-sh/ruff-lsp" }, -- should gradually replace others like black
+  -- MUST HAVES -- Should probably be installed via Mason
+  {
+    "williamboman/mason.nvim",
+    opts = {
+      ensure_installed = {
+        "black",
+        "ruff",
+        "pyright"
+      }
+    }
+  },
+  -- { "psf/black" },         -- black formatter for python
+  -- { "microsoft/pyright" }, -- python language server
+  -- { "LuaLS/lua-language-server" },
+  -- { "astral-sh/ruff" },
+  -- { "astral-sh/ruff-lsp" }, -- should gradually replace others like black
 }
