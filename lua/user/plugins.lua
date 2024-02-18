@@ -83,9 +83,18 @@ lvim.plugins = {
     opts = {},
   },
   -- https://github.com/folke/todo-comments.nvim
+  -- Highlight, list and search todo comments in your projects
   {
     "folke/todo-comments.nvim",
     dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {}
+  },
+  -- https://github.com/folke/persistence.nvim
+  -- Simple session management for Neovim
+  -- TODO: Config relevant key bindings
+  {
+    "folke/persistence.nvim",
+    event = "BufReadPre", -- this will only start session saving when an actual file was opened
     opts = {}
   },
   -- github copilot
