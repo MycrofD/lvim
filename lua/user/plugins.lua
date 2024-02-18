@@ -130,6 +130,12 @@ lvim.plugins = {
       { "<c-\\>", "<cmd><C-U>TmuxNavigatePrevious<cr>" },
     },
   },
+  -- https://github.com/tpope/vim-surround
+  -- Delete/change/add parentheses/quotes/XML-tags/much more with ease
+  { "tpope/vim-surround" },
+  -- TODO: Add tpope/vim-repeat
+  -- TODO: Add leap.nvim
+  --
   -- sourcery
   {
     "neoclide/coc.nvim",
