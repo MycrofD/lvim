@@ -26,7 +26,11 @@ lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 -- lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 -- lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 
--- -- Use which-key to add extra bindings with the leader-key prefix
+-- Use which-key to add extra bindings with the leader-key prefix
+lvim.builtin.which_key.mappings["C"] = {
+  name = "Python",
+  c = { "<cmd>lua require('swenv.api').pick_venv()<cr>", "Choose Env" }
+}
 -- lvim.builtin.which_key.mappings["W"] = { "<cmd>noautocmd w<cr>", "Save without formatting" }
 -- lvim.builtin.which_key.mappings["P"] = { "<cmd>Telescope projects<CR>", "Projects" }
 
@@ -44,8 +48,9 @@ lvim.builtin.treesitter.auto_install = true
 
 -- lvim.builtin.treesitter.ignore_install = { "haskell" }
 
--- -- always installed on startup, useful for parsers without a strict filetype
--- lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "regex" }
+-- always installed on startup, useful for parsers without a strict filetype
+-- e.g. for python, this will provide syntax highlighting, indentation, folding etc.
+lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "regex", "python" }
 
 -- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
 
@@ -74,16 +79,11 @@ lvim.builtin.treesitter.auto_install = true
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 
--- -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
--- local formatters = require "lvim.lsp.null-ls.formatters"
--- formatters.setup {
---   { command = "stylua" },
---   {
---     command = "prettier",
---     extra_args = { "--print-width", "100" },
---     filetypes = { "typescript", "typescriptreact" },
---   },
--- }
+-- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  { name = "black" },
+}
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
@@ -95,6 +95,11 @@ lvim.builtin.treesitter.auto_install = true
 
 -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 lvim.plugins = {
+  -- switch env
+  {
+    "Acksld/swenv.nvim",      -- actual env switcher
+    "stevearc/dressing.nvim", -- will make the UI look nicer
+  },
   -- debugging
   {
     "mfussenegger/nvim-dap-python",
@@ -163,6 +168,11 @@ lvim.plugins = {
   },
 }
 
+require('swenv').setup({
+  post_set_env = function()
+    vim.cmd("LspRestart")
+  end,
+})
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "zsh",
