@@ -148,6 +148,8 @@ lvim.plugins = {
       ensure_installed = {
         "black",
         "ruff",
+        "ruff-lsp",
+        "nvim-lspconfig",
         "pyright"
       }
     }
