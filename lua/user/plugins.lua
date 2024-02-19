@@ -28,6 +28,12 @@ lvim.plugins = {
     build = function() vim.fn["mkdp#util#install"]() end,
   },
 
+  -- debugging
+  { "mfussenegger/nvim-dap" },        -- lunarvim already has nvim-dap, nvim-dap-ui
+  { "mfussenegger/nvim-dap-python" }, -- lunarvim already has nvim-dap, nvim-dap-ui
+  { "nvim-neotest/neotest" },
+  { "nvim-neotest/neotest-python" },
+
   -- switch env
   {
     "Acksld/swenv.nvim", -- actual env switcher
