@@ -80,10 +80,10 @@ lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "rege
 -- end
 
 -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
-local formatters = require "lvim.lsp.null-ls.formatters"
-formatters.setup {
-  { name = "black" },
-}
+-- local formatters = require "lvim.lsp.null-ls.formatters"
+-- formatters.setup {
+--   { name = "black" },
+-- }
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
