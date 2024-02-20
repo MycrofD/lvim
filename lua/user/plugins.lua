@@ -31,6 +31,15 @@ lvim.plugins = {
   -- find the enemy and replace them with dark power
   { "nvim-pack/nvim-spectre" },
 
+  -- dim inactive portions of the code you are editing using TreeSitter
+  -- pairs well with zen-mode
+  { "folke/twilight.nvim" },
+  -- distraction-free coding for Neovim
+  { "folke/zen-mode.nvim" },
+  -- TODO: Add better colour schemes for git diff
+  -- https://github.com/LunarVim/Colorschemes/tree/master/colors
+  -- https://github.com/sainnhe/sonokai
+
   -- debugging
   { "mfussenegger/nvim-dap" },        -- lunarvim already has nvim-dap, nvim-dap-ui
   { "mfussenegger/nvim-dap-python" }, -- lunarvim already has nvim-dap, nvim-dap-ui
