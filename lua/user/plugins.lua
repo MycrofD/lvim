@@ -156,7 +156,8 @@ lvim.plugins = {
         "ruff",
         "ruff-lsp",
         "nvim-lspconfig",
-        "pyright"
+        "pyright",
+        "debugpy",
       }
     }
   },
