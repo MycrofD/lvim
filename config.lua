@@ -12,7 +12,7 @@ vim.opt.relativenumber = true
 lvim.log.level = "info"
 lvim.format_on_save = {
   enabled = true,
-  pattern = { "*.lua", "*.py", "*.json", "*.md", "*.tf" },
+  pattern = { "*.lua", "*.py", "*.json", "*.md", "*.tf", "*.toml", "*.yaml" },
   timeout = 1000,
 }
 -- to disable icons and use a minimalist setup, uncomment the following
