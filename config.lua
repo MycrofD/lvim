@@ -131,3 +131,13 @@ lvim.builtin.which_key.mappings["df"] = {
 lvim.builtin.which_key.mappings["dF"] = {
   "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Test Class DAP" }
 lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" }
+
+-- setup spectre
+lvim.builtin.which_key.mappings["ss"] = { '<cmd>lua require("spectre").toggle()<CR>', "Toggle Spectre" }
+lvim.builtin.which_key.mappings["ssw"] = { '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
+  "Search current word" }
+lvim.builtin.which_key.mappings["ssw"] = { '<esc><cmd>lua require("spectre").open_visual()<CR>', "Search current word"
+}
+lvim.builtin.which_key.mappings["ssf"] = { '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
+  "Search on current file"
+}
