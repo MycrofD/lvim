@@ -1,0 +1,48 @@
+---
+# See https://pre-commit.com for more information
+# See https://pre-commit.com/hooks.html for more hooks
+repos:
+ - repo: https://github.com/pre-commit/pre-commit-hooks
+   rev: v4.5.0
+   hooks:
+    - id: trailing-whitespace
+    - id: end-of-file-fixer
+    - id: check-yaml
+    - id: check-toml
+    - id: check-added-large-files
+    - id: debug-statements
+    - id: check-json
+    - id: pretty-format-json
+      args: [--autofix]
+
+ # Mypy
+ - repo: https://github.com/pre-commit/mirrors-mypy
+   rev: v1.8.0
+   hooks:
+    - id: mypy
+      verbose: true
+      args: [--ignore-missing-imports, --show-error-codes]
+      additional_dependencies: [types-requests, tokenize-rt==3.2.0]
+
+ # Ruff
+ - repo: https://github.com/charliermarsh/ruff-pre-commit
+   # Ruff version.
+   rev: v0.3.0
+   hooks:
+    - id: ruff
+      # args: [--fix, --exit-non-zero-on-fix]
+      args: [--fix, --ignore, E501, --ignore, I001]
+
+ # yamllint
+ - repo: https://github.com/adrienverge/yamllint
+   rev: v1.35.1
+   hooks:
+    - id: yamllint
+      args: [--strict]
+
+ # tomlsort
+ - repo: https://github.com/pappasam/toml-sort
+   rev: v0.23.1
+   hooks:
+    - id: toml-sort
+    - id: toml-sort-fix
