@@ -65,6 +65,11 @@ lvim.plugins = {
     event = "BufRead",
     config = function() require "lsp_signature".on_attach() end,
   },
+  -- extensible UI for neovim notifications and LSP progress messages
+  {
+    "j-hui/fidget.nvim",
+    opts = {}, -- options
+  },
 
   -- debugging
   { "mfussenegger/nvim-dap" },        -- lunarvim already has nvim-dap, nvim-dap-ui
