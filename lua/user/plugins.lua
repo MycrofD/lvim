@@ -51,6 +51,13 @@ lvim.plugins = {
       vim.cmd("let g:minimap_auto_start_win_enter = 1")
     end,
   },
+  -- hint when you type
+  {
+    "ray-x/lsp_signature.nvim",
+    event = "BufRead",
+    config = function() require "lsp_signature".on_attach() end,
+  },
+
   -- debugging
   { "mfussenegger/nvim-dap" },        -- lunarvim already has nvim-dap, nvim-dap-ui
   { "mfussenegger/nvim-dap-python" }, -- lunarvim already has nvim-dap, nvim-dap-ui
