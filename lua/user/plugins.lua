@@ -51,6 +51,14 @@ lvim.plugins = {
       vim.cmd("let g:minimap_auto_start_win_enter = 1")
     end,
   },
+  -- neovim's answer to the mouse
+  {
+    "ggandor/leap.nvim",
+    name = "leap",
+    -- config = function()
+    --   require("leap").add_default_mappings()
+    -- end,
+  },
   -- hint when you type
   {
     "ray-x/lsp_signature.nvim",
