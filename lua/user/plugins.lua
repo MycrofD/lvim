@@ -56,6 +56,8 @@ lvim.plugins = {
   { "mfussenegger/nvim-dap-python" }, -- lunarvim already has nvim-dap, nvim-dap-ui
   { "nvim-neotest/neotest" },
   { "nvim-neotest/neotest-python" },
+  -- add virtual text support to nvim-dap
+  { "theHamsta/nvim-dap-virtual-text" },
 
   -- switch env
   {

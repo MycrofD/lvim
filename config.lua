@@ -118,7 +118,8 @@ require("neotest").setup({
       },
       args = { "--log-level", "DEBUG", "--quiet" },
       runner = "pytest",
-    })
+    }),
+    require("nvim-dap-virtual-text").setup(),
   }
 })
 
