@@ -40,6 +40,17 @@ lvim.plugins = {
   -- https://github.com/LunarVim/Colorschemes/tree/master/colors
   -- https://github.com/sainnhe/sonokai
 
+  -- minimap / scrollbar for vim, powered by code-minimap written in Rust
+  {
+    "wfxr/minimap.vim",
+    build = "cargo install --locked code-minimap",
+    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+    config = function()
+      vim.cmd("let g:minimap_width = 10")
+      vim.cmd("let g:minimap_auto_start = 1")
+      vim.cmd("let g:minimap_auto_start_win_enter = 1")
+    end,
+  },
   -- debugging
   { "mfussenegger/nvim-dap" },        -- lunarvim already has nvim-dap, nvim-dap-ui
   { "mfussenegger/nvim-dap-python" }, -- lunarvim already has nvim-dap, nvim-dap-ui
