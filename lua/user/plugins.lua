@@ -70,6 +70,10 @@ lvim.plugins = {
     "j-hui/fidget.nvim",
     opts = {}, -- options
   },
+  -- A Filetype plugin for csv files
+  -- { "chrisbra/csv.vim" },
+  -- Highlight columns in CSV and TSV files and run queries in SQL-like language
+  { "mechatroner/rainbow_csv" },
 
   -- debugging
   { "mfussenegger/nvim-dap" },        -- lunarvim already has nvim-dap, nvim-dap-ui
