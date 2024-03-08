@@ -191,7 +191,11 @@ lvim.plugins = {
   -- TODO: Add tpope/vim-repeat
   -- TODO: Add leap.nvim
   --
-  -- sourcery
+  -- Nodejs extension host for vim and neovim, load extensions like VSCode and host language servers
+  -- Sourcery,
+  -- coc-ruff or coc-pyright or coc-jedi or coc-pylsp,
+  -- coc-explorer,
+  -- etc.
   {
     "neoclide/coc.nvim",
     branch = "release",
