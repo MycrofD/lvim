@@ -302,6 +302,17 @@ lvim.plugins = {
   -- MUST HAVES -- Should probably be installed via Mason
   {
     "williamboman/mason.nvim",
+    config = function()
+      require("mason").setup({
+        ui = {
+          icons = {
+            package_installed = "✓",
+            package_pending = "➜",
+            package_uninstalled = "✗"
+          }
+        }
+      })
+    end,
     opts = {
       ensure_installed = {
         "black",
