@@ -201,6 +201,30 @@ lvim.plugins = {
     "neoclide/coc.nvim",
     branch = "release",
   },
+  -- The telescope plugin
+  -- Live grep with `args`
+  {
+    "nvim-telescope/telescope.nvim",
+    dependencies = {
+      {
+        "nvim-telescope/telescope-live-grep-args.nvim",
+        -- This will not install any breaking changes.
+        -- For major updates, this must be adjusted manually.
+        version = "^1.0.0",
+      },
+    },
+    config = function()
+      local telescope = require("telescope")
+
+      -- First setup telescope
+      telescope.setup({
+        -- Your config
+      })
+
+      -- Then load the extension
+      telescope.load_extension("live_grep_args")
+    end
+  },
   -- MUST HAVES -- Should probably be installed via Mason
   {
     "williamboman/mason.nvim",
