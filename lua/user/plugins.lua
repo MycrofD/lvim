@@ -113,6 +113,13 @@ lvim.plugins = {
   -- switch env
   {
     "Acksld/swenv.nvim", -- actual env switcher
+    config = function()
+      require('swenv').setup({
+        post_set_env = function()
+          vim.cmd("LspRestart")
+        end,
+      })
+    end
   },
   -- improve the default vim.ui interfaces
   {

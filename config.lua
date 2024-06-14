@@ -84,11 +84,6 @@ reload("user.plugins")
 -- Ruff LSP for Python
 reload("user.lsp.ruff_lsp")
 
-require('swenv').setup({
-  post_set_env = function()
-    vim.cmd("LspRestart")
-  end,
-})
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "zsh",
