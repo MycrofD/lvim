@@ -78,7 +78,35 @@ lvim.plugins = {
   -- debugging
   { "mfussenegger/nvim-dap" },        -- lunarvim already has nvim-dap, nvim-dap-ui
   { "mfussenegger/nvim-dap-python" }, -- lunarvim already has nvim-dap, nvim-dap-ui
-  { "nvim-neotest/neotest" },
+
+  -- An extensible framework for interacting with tests within NeoVim.
+  {
+    "nvim-neotest/neotest",
+    dependencies = {
+      "nvim-neotest/nvim-nio",
+      "nvim-lua/plenary.nvim",
+      "antoinemadec/FixCursorHold.nvim",
+      "nvim-treesitter/nvim-treesitter"
+    },
+    config = function()
+      require("neotest").setup({
+        adapters = {
+          require("neotest-python")({
+            -- Extra arguments for nvim-dap configuration
+            -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
+            dap = {
+              justMyCode = false,
+              console = "integratedTerminal",
+            },
+            args = { "--log-level", "DEBUG", "--quiet" },
+            runner = "pytest",
+          }),
+          require("nvim-dap-virtual-text").setup(),
+        }
+      })
+    end
+  },
+  --
   { "nvim-neotest/neotest-python" },
   { "nvim-neotest/nvim-nio" },
   -- add virtual text support to nvim-dap
