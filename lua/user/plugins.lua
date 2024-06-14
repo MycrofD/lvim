@@ -108,7 +108,6 @@ lvim.plugins = {
   },
   --
   { "nvim-neotest/neotest-python" },
-  { "nvim-neotest/nvim-nio" },
   -- add virtual text support to nvim-dap
   { "theHamsta/nvim-dap-virtual-text" },
 
