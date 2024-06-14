@@ -201,6 +201,23 @@ lvim.plugins = {
     "neoclide/coc.nvim",
     branch = "release",
   },
+  -- The which-key plugin
+  -- Create key bindings that stick.
+  -- `WhichKey` is a `lua` plugin for Neovim 0.5 that displays a popup with possible keybindings of the command you started typing.
+  {
+    "folke/which-key.nvim",
+    event = "VeryLazy",
+    init = function()
+      vim.o.timeout = true
+      vim.o.timeoutlen = 300
+    end,
+    opts = {
+      -- Your configuration comes here
+      -- or leave it empty to use the default settings
+      -- refer to the configuration section below
+    }
+  },
+
   -- The telescope plugin
   -- Live grep with `args`
   {
