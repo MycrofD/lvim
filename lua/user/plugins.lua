@@ -62,8 +62,9 @@ lvim.plugins = {
   -- hint when you type
   {
     "ray-x/lsp_signature.nvim",
-    event = "BufRead",
-    config = function() require "lsp_signature".on_attach() end,
+    event = "VeryLazy",
+    opts = {},
+    config = function(_, opts) require 'lsp_signature'.setup(opts) end
   },
   -- extensible UI for neovim notifications and LSP progress messages
   {
