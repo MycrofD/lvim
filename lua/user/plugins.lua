@@ -241,7 +241,11 @@ lvim.plugins = {
   --
   -- Nodejs extension host for vim and neovim, load extensions like VSCode and host language servers
   -- Sourcery,
-  -- coc-ruff or coc-pyright or coc-jedi or coc-pylsp,
+  -- coc-ruff - ruff-lsp extension for coc.nvim (coc-ruff or coc-pyright or coc-jedi or coc-pylsp)
+  {
+    'yaegassy/coc-ruff',
+    build = 'yarn install --frozen-lockfile'
+  },
   -- coc-explorer,
   -- etc.
   {
