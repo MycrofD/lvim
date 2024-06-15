@@ -8,8 +8,10 @@ vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
-  -- Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  if client.name == 'ruff_lsp' then
+    -- Disable hover in favour of Pyright
+    client.server_capabilities.hoverProvider = false
+  end
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -42,4 +44,20 @@ require('lspconfig').ruff_lsp.setup {
       args = {},
     }
   }
+}
+-- Use Ruff exclusively for linting, formatting, and organizing imports.
+-- Disable those capabilities in Pyright.
+require('lspconfig').pyright.setup {
+  settings = {
+    pyright = {
+      -- Using Ruff's import organizer
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        -- Ignore all files for analysis to exclusively use Ruff for linting
+        ignore = { "*" },
+      },
+    },
+  },
 }
