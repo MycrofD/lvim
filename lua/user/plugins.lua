@@ -78,6 +78,20 @@ lvim.plugins = {
   -- debugging
   { "mfussenegger/nvim-dap" },        -- lunarvim already has nvim-dap, nvim-dap-ui
   { "mfussenegger/nvim-dap-python" }, -- lunarvim already has nvim-dap, nvim-dap-ui
+  {                                   -- mason-nvim-dap bridges mason.nvim with the nvim-dap plugin - making it easier to use both plugins together.
+    "jay-babu/mason-nvim-dap.nvim",
+    dependencies = {
+      "williamboman/mason.nvim",
+      "mfussenegger/nvim-dap",
+    },
+    config = function()
+      require("mason-nvim-dap").setup({
+        ensure_installed = { "python", },
+        automatic_installation = true, -- installs the debuggers automatically via mason, e.g. debugpy for python listed above
+      })
+    end,
+
+  },
 
   -- An extensible framework for interacting with tests within NeoVim.
   {
@@ -313,20 +327,16 @@ lvim.plugins = {
         }
       })
     end,
-    opts = {
-      ensure_installed = {
-        "black",
-        "ruff",
-        "ruff-lsp",
-        "nvim-lspconfig",
-        "pyright",
-        "debugpy",
-      }
-    }
   },
-  -- { "psf/black" },         -- black formatter for python
-  -- { "microsoft/pyright" }, -- python language server
-  -- { "LuaLS/lua-language-server" },
-  -- { "astral-sh/ruff" },
-  -- { "astral-sh/ruff-lsp" }, -- should gradually replace others like black
+  {
+    "williamboman/mason-lspconfig.nvim",
+    config = function()
+      require("mason-lspconfig").setup({
+        ensure_installed = { "lua_ls", "rust_analyzer", "ruff", "ruff_lsp", "pyright" }
+      })
+    end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+  },
 }
