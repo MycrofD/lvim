@@ -4,9 +4,7 @@
 ]]
 
 -- vim options
-vim.opt.shiftwidth = 2
-vim.opt.tabstop = 2
-vim.opt.relativenumber = true
+require("user.options")
 
 -- general
 lvim.log.level = "info"
