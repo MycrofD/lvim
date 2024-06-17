@@ -78,9 +78,9 @@ lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "rege
 -- end
 
 -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
-reload("user.plugins")
+require("user.plugins")
 -- Ruff LSP for Python
-reload("user.lsp.ruff_lsp")
+require("user.lsp.ruff_lsp")
 
 -- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- vim.api.nvim_create_autocmd("FileType", {
