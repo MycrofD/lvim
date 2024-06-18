@@ -165,6 +165,20 @@ lvim.plugins = {
     },
     ft = { "fugitive" }
   },
+  -- neogit
+  {
+    "NeogitOrg/neogit",
+    dependencies = {
+      "nvim-lua/plenary.nvim",  -- required
+      "sindrets/diffview.nvim", -- optional - Diff integration
+
+      -- Only one of these is needed, not both.
+      "nvim-telescope/telescope.nvim", -- optional
+      "ibhagwan/fzf-lua",              -- optional
+    },
+    config = true
+  },
+
   -- git-blame
   {
     "f-person/git-blame.nvim",
@@ -173,11 +187,6 @@ lvim.plugins = {
       vim.cmd "highlight default link gitblame SpecialComment"
       vim.g.gitblame_enabled = 0
     end,
-  },
-  -- diffview
-  {
-    "sindrets/diffview.nvim",
-    event = "BufRead",
   },
   -- https://github.com/folke/trouble.nvim
   -- A pretty diagnostics, references, telescope results, quickfix and location list to help you solve all the trouble your code is causing.
