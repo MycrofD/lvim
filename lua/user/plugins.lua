@@ -13,13 +13,25 @@ lvim.plugins = {
   -- split and resize windows better
   { "beauwilliams/focus.nvim" },
   { "mrjones2014/smart-splits.nvim" },
-  -- headlines.nvim for markdown
+
+  -- plugins for markdown
+  -- -- headlines.nvim for markdown
   {
     "lukas-reineke/headlines.nvim",
     dependencies = { "nvim-treesitter" },
     config = true, -- or `opts = { }`
   },
-  -- install without yarn or npm
+  -- -- markdown.nvim for markdown
+  {
+    'MeanderingProgrammer/markdown.nvim',
+    name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = function()
+      require('render-markdown').setup({})
+    end,
+  },
+  -- -- markdown-preview.nvim for markdown (has not worked since nvim 0.10 upgrade)
+  -- -- -- install without yarn or npm
   {
     "iamcco/markdown-preview.nvim",
     autocmd = { "MarkdownPreview" },
