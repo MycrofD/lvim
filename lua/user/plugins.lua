@@ -190,6 +190,8 @@ lvim.plugins = {
   {
     "mfussenegger/nvim-lint",
   },
+  -- yamllint
+  { "neomake/neomake" },
   -- vim-fugitive
   {
     "tpope/vim-fugitive",
