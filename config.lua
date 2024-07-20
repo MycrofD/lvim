@@ -94,7 +94,7 @@ require("user.lsp.ruff_lsp")
 -- })
 --
 
--- setup debug adapter
+-- set up debug adapter
 lvim.builtin.dap.active = true
 local mason_path = vim.fn.glob(vim.fn.stdpath "data" .. "/mason/")
 pcall(function()
@@ -116,7 +116,7 @@ lvim.builtin.which_key.mappings["dF"] = {
   "<cmd>lua require('neotest').run.run({vim.fn.expand('%'), strategy = 'dap'})<cr>", "Test Class DAP" }
 lvim.builtin.which_key.mappings["dS"] = { "<cmd>lua require('neotest').summary.toggle()<cr>", "Test Summary" }
 
--- setup spectre
+-- set up spectre
 lvim.builtin.which_key.mappings["ss"] = { '<cmd>lua require("spectre").toggle()<CR>', "Toggle Spectre" }
 lvim.builtin.which_key.mappings["ssw"] = { '<cmd>lua require("spectre").open_visual({select_word=true})<CR>',
   "Search current word" }
