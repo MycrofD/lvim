@@ -33,6 +33,7 @@ lvim.plugins = {
     "lukas-reineke/headlines.nvim",
     dependencies = { "nvim-treesitter" },
     config = true, -- or `opts = { }`
+    -- config = false,
   },
   -- -- markdown.nvim for markdown
   -- {
@@ -94,7 +95,7 @@ lvim.plugins = {
     "ggandor/leap.nvim",
     name = "leap",
     -- config = function()
-    --   require("leap").add_default_mappings()
+    --   require("leap").add_default_mappings() -- the default mappings do not allow deletion by `x` in visual mode
     -- end,
   },
   -- hint when you type
@@ -182,6 +183,9 @@ lvim.plugins = {
     "stevearc/dressing.nvim", -- will make the UI look nicer
     opts = {},
   },
+  -- TODO
+  -- nvim-surround
+  -- nvim-bqf
   -- linting
   {
     "mfussenegger/nvim-lint",
@@ -380,7 +384,8 @@ lvim.plugins = {
             package_pending = "➜",
             package_uninstalled = "✗"
           }
-        }
+        },
+        -- ensure_installed = { "harper_ls" }
       })
     end,
   },
