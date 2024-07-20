@@ -104,6 +104,10 @@ lvim.builtin.which_key.mappings["dm"] = { "<cmd>lua require('neotest').run.run()
   "Test Method" }
 lvim.builtin.which_key.mappings["dM"] = { "<cmd>lua require('neotest').run.run({strategy = 'dap'})<cr>",
   "Test Method DAP" }
+lvim.builtin.which_key.mappings["dx"] = { "<cmd>lua require('neotest').run.stop()<cr>",
+  "Stop Method" }
+lvim.builtin.which_key.mappings["da"] = { "<cmd>lua require('neotest').run.attach()<cr>",
+  "Attach to Method" }
 lvim.builtin.which_key.mappings["df"] = {
   "<cmd>lua require('neotest').run.run({vim.fn.expand('%')})<cr>", "Test Class" }
 lvim.builtin.which_key.mappings["dF"] = {

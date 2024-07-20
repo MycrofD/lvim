@@ -111,11 +111,13 @@ lvim.plugins = {
     "nvim-neotest/neotest",
     dependencies = {
       "nvim-neotest/nvim-nio",
+      "nvim-neotest/neotest-plenary",
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter"
     },
     config = function()
       require("neotest").setup({
+        log_level = vim.log.levels.TRACE,
         adapters = {
           require("neotest-python")({
             -- Extra arguments for nvim-dap configuration
@@ -127,7 +129,8 @@ lvim.plugins = {
             args = { "--log-level", "DEBUG", "--quiet" },
             runner = "pytest",
           }),
-          require("nvim-dap-virtual-text").setup(),
+          require("nvim-dap-virtual-text").setup({}),
+          require("neotest-plenary"),
         }
       })
     end
