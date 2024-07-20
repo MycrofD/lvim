@@ -123,3 +123,18 @@ lvim.builtin.which_key.mappings["ssw"] = { '<esc><cmd>lua require("spectre").ope
 lvim.builtin.which_key.mappings["ssf"] = { '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>',
   "Search on current file"
 }
+
+-- config minimap and markdown
+lvim.builtin.which_key.mappings["m"] = {
+  -- minimap
+  name = "Minimap/Markdown",
+  m = { "<cmd>Minimap<cr>", "Open Minimap" },
+  t = { "<cmd>MinimapToggle<cr>", "Toggle Minimap" },
+  c = { "<cmd>MinimapClose<cr>", "Close Minimap" },
+  r = { "<cmd>MinimapRefresh<cr>", "Refresh Minimap" },
+  u = { "<cmd>MinimapUpdateHighlightcr>", "Update Highlight Minimap" },
+
+  -- markdown with peek
+  d = { "<cmd>PeekOpen<cr>", "Open Markdown" },
+  x = { "<cmd>PeekClose<cr>", "Close Markdown" },
+}
