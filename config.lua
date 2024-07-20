@@ -80,7 +80,7 @@ lvim.builtin.treesitter.ensure_installed = { "comment", "markdown_inline", "rege
 -- end
 
 -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
-require("user.plugins")
+reload("user.plugins")
 -- Ruff LSP for Python
 require("user.lsp.ruff_lsp")
 
