@@ -124,6 +124,17 @@ lvim.builtin.which_key.mappings["ssf"] = { '<cmd>lua require("spectre").open_fil
   "Search on current file"
 }
 
+-- set up trouble
+lvim.builtin.which_key.mappings["x"] = {
+  name = "Trouble",
+  x = { "<cmd>Trouble diagnostics<cr>", "Diagnostics" },
+  X = { "<cmd>Trouble diagnostics toggle filter.buf=0<cr>", "Buffer Diagnostics" },
+  s = { "<cmd>Trouble symbols toggle focus=false<cr>", "Symbols" },
+  l = { "<cmd>Trouble lsp toggle focus=false win.position=right<cr>", "LSP Definitions / references / ..." },
+  L = { "<cmd>Trouble loclist toggle", "Location List" },
+  Q = { "<cmd>Trouble qflist toggle", "Quickfix List" },
+}
+
 -- config minimap and markdown
 lvim.builtin.which_key.mappings["m"] = {
   -- minimap

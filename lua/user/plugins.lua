@@ -221,7 +221,8 @@ lvim.plugins = {
   {
     "folke/trouble.nvim",
     dependencies = { "nvim-tree/nvim-web-devicons" },
-    opts = {},
+    opts = {}, -- for default options, refer to the configuration section for custom setup.
+    cmd = "Trouble",
   },
   -- https://github.com/folke/todo-comments.nvim
   -- Highlight, list and search todo comments in your projects
