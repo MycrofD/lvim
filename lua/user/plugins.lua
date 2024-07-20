@@ -22,22 +22,35 @@ lvim.plugins = {
     config = true, -- or `opts = { }`
   },
   -- -- markdown.nvim for markdown
-  {
-    'MeanderingProgrammer/markdown.nvim',
-    name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
-    dependencies = { 'nvim-treesitter/nvim-treesitter' },
-    config = function()
-      require('render-markdown').setup({})
-    end,
-  },
-  -- -- markdown-preview.nvim for markdown (has not worked since nvim 0.10 upgrade)
-  -- -- -- install without yarn or npm
+  -- {
+  --   'MeanderingProgrammer/markdown.nvim',
+  --   name = 'render-markdown', -- Only needed if you have another plugin named markdown.nvim
+  --   dependencies = { 'nvim-treesitter/nvim-treesitter' },
+  --   config = function()
+  --     require('render-markdown').setup({})
+  --   end,
+  -- },
+  -- markdown-preview.nvim for markdown
+  -- install without yarn or npm
   {
     "iamcco/markdown-preview.nvim",
     autocmd = { "MarkdownPreview" },
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
+  },
+  -- peek.nvim for markdown preview
+  {
+    "toppair/peek.nvim",
+    event = { "VeryLazy" },
+    build = "deno task --quiet build:fast",
+    config = function()
+      require("peek").setup({
+        app = 'webview',
+      })
+      vim.api.nvim_create_user_command("PeekOpen", require("peek").open, {})
+      vim.api.nvim_create_user_command("PeekClose", require("peek").close, {})
+    end,
   },
 
   -- find the enemy and replace them with dark power
@@ -56,7 +69,7 @@ lvim.plugins = {
   {
     "wfxr/minimap.vim",
     build = "cargo install --locked code-minimap",
-    -- cmd = {"Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight"},
+    cmd = { "Minimap", "MinimapClose", "MinimapToggle", "MinimapRefresh", "MinimapUpdateHighlight" },
     config = function()
       vim.cmd("let g:minimap_width = 10")
       vim.cmd("let g:minimap_auto_start = 1")
