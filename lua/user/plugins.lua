@@ -14,6 +14,19 @@ lvim.plugins = {
   { "beauwilliams/focus.nvim" },
   { "mrjones2014/smart-splits.nvim" },
 
+  -- colorschemes
+  {
+    "folke/tokyonight.nvim",
+    lazy = false,
+    priority = 1000,
+    opts = {},
+    config = function()
+      require("tokyonight").setup({
+        style = "night",
+      })
+    end,
+  },
+
   -- plugins for markdown
   -- -- headlines.nvim for markdown
   {

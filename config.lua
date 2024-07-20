@@ -6,6 +6,8 @@
 -- vim options
 require("user.options")
 
+lvim.colorscheme = "tokyonight-night"
+
 -- general
 lvim.log.level = "info"
 lvim.format_on_save = {
