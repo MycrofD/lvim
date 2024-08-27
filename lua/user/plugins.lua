@@ -192,6 +192,14 @@ lvim.plugins = {
   },
   -- yamllint
   { "neomake/neomake" },
+  -- Git integration for buffers with git-signs
+  {
+    "lewis6991/gitsigns.nvim",
+    event = "BufRead",
+    config = function()
+      require("gitsigns").setup()
+    end
+  },
   -- neovim fugitive style git blame plugin
   {
     "FabijanZulj/blame.nvim",
