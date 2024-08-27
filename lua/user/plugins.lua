@@ -192,6 +192,13 @@ lvim.plugins = {
   },
   -- yamllint
   { "neomake/neomake" },
+  -- neovim fugitive style git blame plugin
+  {
+    "FabijanZulj/blame.nvim",
+    config = function()
+      require("blame").setup()
+    end
+  },
   -- vim-fugitive
   {
     "tpope/vim-fugitive",
